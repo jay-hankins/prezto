@@ -26,7 +26,7 @@ unsetopt CORRECT
 ##################################################################################
 ###   ZSH aliases                                                              ###
 ##################################################################################
-# Cisco 
+# Cisco
 alias jumphost="ssh -A sherlock@172.18.215.80"
 alias console-server="ssh rtp10-mtdlab-cs1.cisco.com"
 
@@ -38,9 +38,13 @@ alias hankinsj="ssh hankinsj@$PURDUE_MACHINE"
 alias sync='rsync --exclude='.git/' -avP ./ hankinsj@$PURDUE_MACHINE:/homes/hankinsj/cs/cs252/`pwd | rev | cut -d '/' -f1 | rev`/'
 alias sync2='rsync --exclude='.git/' -avP hankinsj@$PURDUE_MACHINE:/homes/hankinsj/cs/cs252/`pwd | rev | cut -d '/' -f1 | rev`/ ./'
 
-# desktop icons
-alias desktop-off='defaults write com.apple.finder CreateDesktop false; killall Finder'
-alias desktop-on='defaults write com.apple.finder CreateDesktop true; killall Finder'
+# desktop icons show/hide
+alias desktop-hide='defaults write com.apple.finder CreateDesktop false; killall Finder'
+alias desktop-show='defaults write com.apple.finder CreateDesktop true; killall Finder'
+
+# hidden files show/hide
+alias hidden-show="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
+alias hidden-hide="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
 
 ##################################################################################
 ###  Customizations                                                            ###
@@ -101,3 +105,5 @@ mkcdir () {
 function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
