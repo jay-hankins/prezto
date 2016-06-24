@@ -58,12 +58,19 @@ eval $(thefuck --alias)
 # watcher script for watching and executing CS sync tool
 alias watcher="fswatch -0 . | xargs -0 -n1 /Users/$USER/syncCS.sh"
 
-#update zprezto
+# update zprezto
 alias updatezp="git pull && git submodule update --init --recursive"
-alias subl=sublime
+
+# sublime fixes
+alias subl='reattach-to-user-namespace subl'
 
 # takes you to the last directory you were in
 alias cd-='cd "$OLDPWD"'
+
+alias grep='grep --color=auto' # Always highlight grep search term
+alias ping='ping -c 5'      # Pings with 5 packets, not unlimited
+alias df='df -h'            # Disk free, in gigabytes, not bytes
+alias du='du -h -c'         # Calculate total disk usage for a folder
 
 
 ##################################################################################
