@@ -39,7 +39,8 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'tmux' \
   'rsync' \
-  'prompt'
+  'prompt' \
+  'archive'
 
 #
 # Autosuggestions

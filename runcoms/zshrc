@@ -61,8 +61,8 @@ alias watcher="fswatch -0 . | xargs -0 -n1 /Users/$USER/syncCS.sh"
 # update zprezto
 alias updatezp="git pull && git submodule update --init --recursive"
 
-# sublime fixes
-alias subl='reattach-to-user-namespace subl'
+# sublime
+alias subl='sublime'
 
 # takes you to the last directory you were in
 alias cd-='cd "$OLDPWD"'
@@ -76,28 +76,6 @@ alias du='du -h -c'         # Calculate total disk usage for a folder
 ##################################################################################
 ###    Custom Functions                                                        ###
 ##################################################################################
-# smart extraction
-extract () {
-  if [ -f $1 ] ; then
-      case $1 in
-          *.tar.bz2)   tar xvjf $1    ;;
-          *.tar.xz)    tar xf   $1    ;;
-          *.tar.gz)    tar xvzf $1    ;;
-          *.bz2)       bunzip2 $1     ;;
-          *.rar)       unrar x $1     ;;
-          *.gz)        gunzip $1      ;;
-          *.tar)       tar xvf $1     ;;
-          *.tbz2)      tar xvjf $1    ;;
-          *.tgz)       tar xvzf $1    ;;
-          *.zip)       unzip $1       ;;
-          *.Z)         uncompress $1  ;;
-          *.7z)        7z x $1        ;;
-          *)           echo "don't know how to extract '$1'..." ;;
-      esac
-  else
-      echo "'$1' is not a valid file!"
-  fi
-}
 
 # make and change to directory
 mkcdir () {
