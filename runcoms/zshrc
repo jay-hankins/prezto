@@ -31,8 +31,8 @@ alias jumphost="ssh -A sherlock@172.18.215.80"
 alias console-server="ssh rtp10-mtdlab-cs1.cisco.com"
 
 # Purdue CS
-export PURDUE_MACHINE=xinu08.cs.purdue.edu
-alias hankinsj="ssh hankinsj@$PURDUE_MACHINE"
+#export PURDUE_MACHINE=xinu08.cs.purdue.edu
+#alias hankinsj="ssh hankinsj@$PURDUE_MACHINE"
 
 # rsync aliases
 alias sync='rsync -avP ./ hankinsj@$PURDUE_MACHINE:/homes/hankinsj/CS/`pwd | rev | cut -d '/' -f1,2 | rev`/'
@@ -87,3 +87,8 @@ function tre() {
 
 # fasd initialize
 eval "$(fasd --init auto)"
+
+# function for connecting to Purdue CS servers
+function hankinsj() {
+	ssh hankinsj@${1:-xinu08}.cs.purdue.edu
+}
