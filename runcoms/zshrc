@@ -52,9 +52,6 @@ alias hidden-hide="defaults write com.apple.Finder AppleShowAllFiles NO && killa
 # safe remove command
 alias rm='rm -i'
 
-# thefuck command
-eval $(thefuck --alias)
-
 # watcher script for watching and executing CS sync tool
 alias watcher="fswatch -e \".git\" -0 . | xargs -0 -n1 /Users/$USER/syncCS.sh"
 
