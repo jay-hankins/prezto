@@ -89,3 +89,11 @@ eval "$(fasd --init auto)"
 function hankinsj() {
 	ssh hankinsj@${1:-xinu10}.cs.purdue.edu
 }
+
+alias jhankins='ssh jhankins-wsm.internal.salesforce.com'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+fixssh() {
+    eval $(tmux show-env -s |grep '^SSH_')
+}
